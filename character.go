@@ -25,13 +25,19 @@ type Class struct {
 
 type Group struct {
 	name        string
-	categoryId  string
-	attributeId string
+	categoryId  int
+	attributeId int
+}
+
+type GroupCategory struct {
+	id int
+	name string
 }
 
 type Attribute struct {
-	id   int
-	name string
+	id    int
+	name  string
+	score int
 }
 
 // GetAbbreviation returns the first three letters of an attribute in upper case.
@@ -40,10 +46,11 @@ func (attr Attribute) GetAbbreviation() string {
 }
 
 type Character struct {
-	name    string
-	xp      int
-	classId int
-	groups  []Group
+	name       string
+	xp         int
+	classId    int
+	groups     []Group
+	attributes [6]Attribute
 }
 
 var (
@@ -51,6 +58,10 @@ var (
 		1: {name: "Deft", baseXp: 1500},
 		2: {name: "Strong", baseXp: 2000},
 		3: {name: "Wise", baseXp: 2500},
+	}
+
+	groupCategories = map[int]GroupCategory{
+		1:
 	}
 
 	attributes = map[int]Attribute{
