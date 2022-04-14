@@ -24,8 +24,11 @@ func main() {
 	// Randomly select a level.
 	level := rand.Intn(10) + 1
 	levelInfo := class.levels[level]
+	// Randomly generate attributes.
+	attributeScores := GenerateAttributeScores()
 
 	fmt.Println("Class:", class.name)
 	fmt.Println("Level:", level)
 	fmt.Println(levelInfo)
+	fmt.Println(attributeScores)
 }
