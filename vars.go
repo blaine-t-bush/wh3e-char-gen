@@ -30,6 +30,7 @@ type GroupCategory struct {
 type Attribute struct {
 	name         string
 	abbreviation string
+	score        int
 }
 
 type Character struct {
