@@ -9,7 +9,7 @@ import (
 func D(n int, f int) int {
 	var total int
 	for i := 0; i < n; i++ {
-		total = total + rand.Intn(f+1)
+		total = total + rand.Intn(f) + 1
 	}
 
 	return total
