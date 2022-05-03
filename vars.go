@@ -374,9 +374,4 @@ var (
 			},
 		},
 	}
-
-	speciess = []string{
-		"Human",
-		"Dwarf",
-	}
 )

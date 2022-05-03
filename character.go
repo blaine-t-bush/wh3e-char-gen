@@ -36,14 +36,18 @@ func main() {
 		}
 	}
 	totalGroupCount := levelInfo.groupCount + bonusGroupCount
+	// Determine species.
+	species := GenerateSpecies()
 
-	fmt.Println("Class: ", class.name, "Level: ", level)
-	fmt.Println("HP:    ", hitPoints)
-	fmt.Println("AV:    ", levelInfo.attackValue)
-	fmt.Println("SV:    ", levelInfo.savingThrow)
-	fmt.Println("Slots: ", levelInfo.slotCount)
-	fmt.Println("Groups:", totalGroupCount)
-	fmt.Println("Raises:", levelInfo.raiseCount)
+	fmt.Println("Class:   ", class.name)
+	fmt.Println("Level:   ", level)
+	fmt.Println("Species: ", species)
+	fmt.Println("HP:      ", hitPoints)
+	fmt.Println("AV:      ", levelInfo.attackValue)
+	fmt.Println("SV:      ", levelInfo.savingThrow)
+	fmt.Println("Slots:   ", levelInfo.slotCount)
+	fmt.Println("Groups:  ", totalGroupCount)
+	fmt.Println("Raises:  ", levelInfo.raiseCount)
 	fmt.Println("# Attributes")
 	fmt.Println(" - STR", attributeScores["str"])
 	fmt.Println(" - DEX", attributeScores["dex"])

@@ -15,6 +15,28 @@ func D(n int, f int) int {
 	return total
 }
 
+func GenerateSpecies() string {
+	// Normalize probabilities.
+	var totalProbability float64 = 0
+	for _, species := range speciess {
+		totalProbability += species.probability
+	}
+
+	// Randomly select a species.
+	var cumulativeProbability float64 = 0
+	var name string
+	roll := rand.Float64()
+	for _, species := range speciess {
+		cumulativeProbability += species.probability / totalProbability
+		if roll <= cumulativeProbability {
+			name = species.name
+			break
+		}
+	}
+
+	return name
+}
+
 // Randomly generate six attribute scores with 3d6.
 func GenerateAttributeScores() map[string]int {
 	return map[string]int{
