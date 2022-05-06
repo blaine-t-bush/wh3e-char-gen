@@ -334,7 +334,7 @@ var (
 		},
 	}
 
-	languages = []string{
+	languages_ = []string{
 		"Low Imperial",
 		"High Imperial",
 		"Khadish",
@@ -361,30 +361,46 @@ var (
 	}
 
 	affiliations_ = []string{
+		// Religion & magic
 		"Seekers of the Unknown Fire",
 		"Church of the New Sun",
 		"Witch Cult",
+		// Magic
 		"Unseeing Monks",
-		"Crimson Court",
-		"Foremost Armigers",
+		"Wardens of the Crystal Tower",
+		"Star Watchers",
+		// Nobles
 		"Great House vet-Doranar",
 		"Great House vet-Elvan",
 		"Great House vet-Haan",
 		"Low House vet-Aldar",
 		"Low House vet-Akash",
-		"Explorers' Guild",
+		// Retinues & mercenaries
+		"Foremost Armigers",
 		"Black Dogs",
+		// Tribes
 		"Scrivenwood Varlings",
-		"Guild of Torturers",
-		"White Cloaks",
-		"Wardens of the Crystal Tower",
+		"Crystal Lake Tribe",
 		"Silver Mountain Tribe",
 		"Smoldering Heart Tribe",
-		"Crystal Lake Tribe",
-		"Star Watchers",
+		// Guilds
+		"Explorers' Guild",
+		"Guild of Torturers",
+		// Gangs
+		"White Cloaks",
+		"Crimson Court",
 	}
 
-	attunementLocations = []string{
+	miracles_ = []string{
+		"Moonlight",
+		"Call of the Elk",
+	}
+
+	attunements_ = []string{
+		// Items
+		// People
+		// Animals
+		// Locations
 		"Caverns of Zakhar",
 		"Silver Mountain",
 		"Crystal Lake",

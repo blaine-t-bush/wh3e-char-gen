@@ -18,7 +18,7 @@ func main() {
 	// Randomly generate attributes.
 	attributeScores := GenerateAttributeScores()
 	// Generate hit points.
-	hitPoints := GenerateHitPoints(levelInfo.hitDie, levelInfo.bonusHitPoints, level, 0)
+	hitPoints := GenerateHitPoints(levelInfo.hitDie, levelInfo.bonusHitPoints, level, class.name, attributeScores["con"], 0)
 
 	// Determine total group count.
 	bonusGroupCount := 0
@@ -111,7 +111,6 @@ func main() {
 
 	for attr, groupNames := range groupsByAttribute {
 		if len(groupNames) > 0 {
-			attributeGroupStrings[attr] = "("
 			for index, groupName := range groupNames {
 				if index == 0 {
 					attributeGroupStrings[attr] += groupName
@@ -119,11 +118,11 @@ func main() {
 					attributeGroupStrings[attr] += fmt.Sprintf(", %s", groupName)
 				}
 			}
-			attributeGroupStrings[attr] += ")"
 		}
 	}
 
 	name := GenerateName()
+	languages := GenerateLanguages(attributeScores["int"])
 
 	fmt.Printf("%s, level %d %s %s %s\n", name, level, class.name, species, vocation)
 	fmt.Println("# Statistics")
@@ -137,4 +136,8 @@ func main() {
 	fmt.Printf(" - INT %2s %s\n", strconv.Itoa(attributeScores["int"]), attributeGroupStrings["Intelligence"])
 	fmt.Printf(" - WIS %2s %s\n", strconv.Itoa(attributeScores["wis"]), attributeGroupStrings["Wisdom"])
 	fmt.Printf(" - CHA %2s %s\n", strconv.Itoa(attributeScores["cha"]), attributeGroupStrings["Charisma"])
+	fmt.Println("# Languages")
+	for _, language := range languages {
+		fmt.Printf(" - %s\n", language)
+	}
 }
