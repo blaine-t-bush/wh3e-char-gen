@@ -15,6 +15,20 @@ func D(n int, f int) int {
 	return total
 }
 
+func GenerateName() string {
+	return "Placeholder"
+}
+
+func GenerateClass() Class {
+	classNames := [3]string{
+		"deft",
+		"strong",
+		"wise",
+	}
+
+	return classes[classNames[rand.Intn(len(classNames))]]
+}
+
 func GenerateSpecies() string {
 	// Normalize probabilities.
 	var totalProbability float64 = 0
@@ -63,4 +77,75 @@ func GenerateHitPoints(hitDice int, bonusHitPoints int, level int, previousHitPo
 			return newHitPoints
 		}
 	}
+}
+
+func GenerateVocation() string {
+	return vocations_[rand.Intn(len(vocations_)-1)]
+}
+
+func GenerateAffiliation(existingAffiliations []string) string {
+	var newAffiliation string
+	var keepSeeking bool
+	for {
+		keepSeeking = false
+		newAffiliation = affiliations_[rand.Intn(len(affiliations_)-1)]
+		for _, affiliation := range existingAffiliations {
+			if newAffiliation == affiliation {
+				keepSeeking = true
+				break
+			}
+		}
+		if !keepSeeking {
+			break
+		}
+	}
+	return newAffiliation
+}
+
+func SelectGroupAttribute(groups []Group, excludes []string) string {
+	// Determine which attributes have fewer than two groups already.
+	groupAttributeCounts := map[string]int{
+		"Strength":     0,
+		"Dexterity":    0,
+		"Constitution": 0,
+		"Intelligence": 0,
+		"Wisdom":       0,
+		"Charisma":     0,
+	}
+
+	for _, group := range groups {
+		groupAttributeCounts[group.attribute]++
+	}
+
+	var availableAttributes []string
+
+	for attribute, count := range groupAttributeCounts {
+		if count < 2 {
+			availableAttributes = append(availableAttributes, attribute)
+		}
+	}
+
+	// Exclude any attributes if that argument has been passed.
+	if len(excludes) > 0 {
+		var modifiedAvailableAttributes []string
+		var include bool
+		for _, attr := range availableAttributes {
+			include = true
+			for _, exclude := range excludes {
+				if attr == exclude {
+					include = false
+					break
+				}
+			}
+
+			if include {
+				modifiedAvailableAttributes = append(modifiedAvailableAttributes, attr)
+			}
+		}
+
+		availableAttributes = modifiedAvailableAttributes
+	}
+
+	// Randomly select one of those attributes.
+	return availableAttributes[rand.Intn(len(availableAttributes)-1)]
 }

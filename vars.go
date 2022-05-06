@@ -1,46 +1,5 @@
 package main
 
-type Class struct {
-	name   string
-	levels map[int]Level
-}
-
-type Level struct {
-	xp             int
-	hitDie         int
-	bonusHitPoints int
-	attackValue    int
-	savingThrow    int
-	slotCount      int
-	groupCount     int
-	raiseCount     int
-}
-
-type Group struct {
-	name      string
-	category  string
-	attribute string
-}
-
-type GroupCategory struct {
-	name           string
-	attributeCount int
-}
-
-type Attribute struct {
-	name         string
-	abbreviation string
-	score        int
-}
-
-type Character struct {
-	name       string
-	xp         int
-	classId    int
-	groups     []Group
-	attributes [6]Attribute
-}
-
 var (
 	attributes = map[string]Attribute{
 		"str": {name: "Strength", abbreviation: "STR"},
@@ -373,5 +332,63 @@ var (
 				},
 			},
 		},
+	}
+
+	languages = []string{
+		"Low Imperial",
+		"High Imperial",
+		"Khadish",
+		"Selan",
+		"Varlish",
+		"Veton",
+		"Fae",
+		"Grimmark",
+		"Draconic",
+	}
+
+	speciess = []Species{
+		{"Human", 0.8},
+		{"Dwarf", 0.2},
+	}
+
+	vocations_ = []string{
+		"Armiger",
+		"Thief",
+		"Oracle",
+		"Priest",
+		"Butcher",
+		"Smith",
+	}
+
+	affiliations_ = []string{
+		"Seekers of the Unknown Fire",
+		"Church of the New Sun",
+		"Witch Cult",
+		"Unseeing Monks",
+		"Crimson Court",
+		"Foremost Armigers",
+		"Great House vet-Doranar",
+		"Great House vet-Elvan",
+		"Great House vet-Haan",
+		"Low House vet-Aldar",
+		"Low House vet-Akash",
+		"Explorers' Guild",
+		"Black Dogs",
+		"Scrivenwood Varlings",
+		"Guild of Torturers",
+		"White Cloaks",
+		"Wardens of the Crystal Tower",
+		"Silver Mountain Tribe",
+		"Smoldering Heart Tribe",
+		"Crystal Lake Tribe",
+		"Star Watchers",
+	}
+
+	attunementLocations = []string{
+		"Caverns of Zakhar",
+		"Silver Mountain",
+		"Crystal Lake",
+		"Scrivenwood",
+		"Isolate Tower",
 	}
 )
