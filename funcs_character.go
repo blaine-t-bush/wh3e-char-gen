@@ -82,6 +82,59 @@ func GenerateAffiliation(existingAffiliations []string) string {
 	return GetUniqueElement(affiliations_, existingAffiliations)
 }
 
+func GenerateAbility(existingAbilities []string) string {
+	return GetUniqueElement(abilities_, existingAbilities)
+}
+
+func GenerateAbilities() []string {
+	var abilities []string
+	abilityCount := 1
+
+	for i := 0; i < abilityCount; i++ {
+		abilities = append(abilities, GenerateAbility(abilities))
+	}
+
+	return abilities
+}
+
+func GenerateAttunement(existingAttunements []string) string {
+	return GetUniqueElement(attunements_, existingAttunements)
+}
+
+func GenerateAttunements() []string {
+	var attunements []string
+	attunementCount := 2
+
+	for i := 0; i < attunementCount; i++ {
+		attunements = append(attunements, GenerateAttunement(attunements))
+	}
+
+	return attunements
+}
+
+func GenerateMiracle(existingMiracles []string) string {
+	return GetUniqueElement(miracles_, existingMiracles)
+}
+
+func GenerateMiracles(wisdomScore int) []string {
+	var miracles []string
+	var miracleCount int
+
+	if wisdomScore >= 16 {
+		miracleCount = 4
+	} else if wisdomScore >= 13 {
+		miracleCount = 3
+	} else {
+		miracleCount = 2
+	}
+
+	for i := 0; i < miracleCount; i++ {
+		miracles = append(miracles, GenerateMiracle(miracles))
+	}
+
+	return miracles
+}
+
 func SelectGroupAttribute(groups []Group, excludes []string) string {
 	// Determine which attributes have fewer than two groups already.
 	groupAttributeCounts := map[string]int{

@@ -365,6 +365,7 @@ var (
 		"Seekers of the Unknown Fire",
 		"Church of the New Sun",
 		"Witch Cult",
+		"Spear of Cold-Eye",
 		// Magic
 		"Unseeing Monks",
 		"Wardens of the Crystal Tower",
@@ -378,6 +379,10 @@ var (
 		// Retinues & mercenaries
 		"Foremost Armigers",
 		"Black Dogs",
+		"Order of the Sphinx",
+		"Sulfur Company",
+		"Aldred's Two Hundred",
+		"Barrett's Privateers",
 		// Tribes
 		"Scrivenwood Varlings",
 		"Crystal Lake Tribe",
@@ -386,14 +391,11 @@ var (
 		// Guilds
 		"Explorers' Guild",
 		"Guild of Torturers",
+		"Crimson Court",
 		// Gangs
 		"White Cloaks",
-		"Crimson Court",
-	}
-
-	miracles_ = []string{
-		"Moonlight",
-		"Call of the Elk",
+		"Wicker Men",
+		"Fog Walkers",
 	}
 
 	attunements_ = []string{
@@ -406,5 +408,117 @@ var (
 		"Crystal Lake",
 		"Scrivenwood",
 		"Isolate Tower",
+		"Scarred Glacier",
+	}
+
+	abilities_ = []string{
+		"Ability 1: Protect ally",
+		"Ability 2: Push attack",
+		"Ability 3: Climb big enemy",
+		"Ability 4: Battle frenzy",
+		"Ability 5: Tactical command",
+		"Ability 6: Encourage",
+		"Ability 7: Double-attack",
+		"Ability 8: Parry",
+	}
+
+	miracles_ = []string{
+		// Witch King, ice, & darkness
+		"Witch King's Blessing",
+		"Witch King's False Life",
+		"Icy Hand of the Witch King",
+		"Invigorate the White Curse",
+		"Banish to the Black Glass Labyrinth",
+		"Blood to Ice",
+		"Witchfrost Simulacrum",
+		"Rolling Calf's Burning Eyes",
+		"Tongue of He Who Speaks Sideways",
+		"Resonance of Heart Bone",
+		"Curse of Two-Tongues",
+		"Baron's Walk Between Worlds",
+		"Un-Fire of Akarbalas",
+		"Rage of Red Wife",
+		// Sun Goddess, stars, & fire
+		"Sun Goddess's Blessing",
+		"Invoke the First Fire",
+		"Invoke the Second Fire",
+		"Invoke the Third Fire",
+		"Invoke the Fourth Fire",
+		"Seek the Unknown Fire",
+		"Sun's Cleansing Fire",
+		"Cold-Eye's Gaze",
+		"Shield of the Valkyrie Star",
+		"Horn of the Huntress Star",
+		"Bite of the Serpent Star",
+		"Pluck from the Firmament",
+		"Shift Constellations",
+		"Starsong",
+		"Silver Moonlight",
+		// New Sun & light
+		"New Sun's Blessing",
+		"New Sun's Radiance",
+		"New Sun's Fire",
+		"Sanctifying Light",
+		"Inquisition of the Dawn",
+		"Dawn's Hallowing",
+		"Concealment of the Dusk",
+		"Dusk's Bane",
+		"Twilight Shadowstep",
+		// Air and wind
+		"Freezing North Wind",
+		"Blistering South Wind",
+		"Soothing West Wind",
+		"Tempestuous East Wind",
+		"Message on the Breeze",
+		// Animals
+		"Call of the Elk",
+		"Skin of the Bear",
+		"Blackspider Venom",
+		"Wisdom of the White Wyrm",
+		// Plants
+		"Acorn of Far Travel",
+		"Oakform",
+		"Treemeld",
+		"One With Roots",
+		"Leafsong",
+		"Lay of the Last Sunflower",
+		// Demons & hell
+		"Sacred Seal",
+		"Sixth-Circle Demonfire",
+		"Fourth-Circle Hellfrost",
+		"Marduk's Profane Gift",
+		// Polymorph
+		"Tentacle Arm",
+		"Retractable Claws",
+		"Winged Feet",
+		// Blood magic
+		"Mutagenic Blood",
+		"Sanguinomancy",
+		// Necromancy & disease
+		"Part the Veil",
+		"Create Revenant",
+		"Banshee Scream",
+		"Ghost Form",
+		"Flense",
+		"Sever Soul",
+		// Electricity, metal, & magnetism
+		"Magnetic Resonance",
+		"Touch of Iron",
+		"Riddle of Steel",
+		"Thermometallurgy",
+		// Earth
+		"Deep One Sunders the Earth",
+		"Crystal Adornment",
+		// Battle
+		"Vehk's Poem of Blades",
+		"Ayem's Warpaint",
+		"Seht's Battle-Sight",
+		"Sword-Saint's Blessing",
+		// Other
+		"Amplify Noise",
+		"Healing Water",
+		"Magical Tattoo",
+		"Curious Potion",
+		"Explosive Runes",
 	}
 )

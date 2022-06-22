@@ -140,4 +140,23 @@ func main() {
 	for _, language := range languages {
 		fmt.Printf(" - %s\n", language)
 	}
+	if class.name == "Deft" {
+		fmt.Println("# Attunements")
+		attunements := GenerateAttunements()
+		for _, attunement := range attunements {
+			fmt.Printf(" - %s\n", attunement)
+		}
+	} else if class.name == "Strong" {
+		fmt.Println("# Abilities")
+		abilities := GenerateAbilities()
+		for _, ability := range abilities {
+			fmt.Printf(" - %s\n", ability)
+		}
+	} else if class.name == "Wise" {
+		fmt.Println("# Miracles")
+		miracles := GenerateMiracles(attributeScores["wis"])
+		for _, miracle := range miracles {
+			fmt.Printf(" - %s\n", miracle)
+		}
+	}
 }
