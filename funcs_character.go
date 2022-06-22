@@ -5,7 +5,26 @@ import (
 )
 
 func GenerateName() string {
-	return "Placeholder"
+	prefixChance := 0.3
+	suffixChance := 0.3
+	rollPrefix := rand.Float64()
+	rollSuffix := rand.Float64()
+	name := ""
+
+	// Possible name prefix
+	if rollPrefix <= prefixChance {
+		name += namesPrefix_[rand.Intn(len(namesPrefix_)-1)] + " "
+	}
+
+	// Primary name
+	name += namesPrimary_[rand.Intn(len(namesPrimary_)-1)]
+
+	// Possible name suffix
+	if rollSuffix <= suffixChance {
+		name += " " + namesSuffix_[rand.Intn(len(namesSuffix_)-1)]
+	}
+
+	return name
 }
 
 func GenerateClass() Class {
