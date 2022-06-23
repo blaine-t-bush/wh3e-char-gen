@@ -4,8 +4,9 @@ var (
 	Affiliations = []string{
 		// Witch King
 		"Witch Cult",
-		"Children of Red Wife",
-		"Cold Fires of Akarbalas",
+		// Seven Corners of the House of Troubles
+		"Servants of Akarbalas",
+		"Consorts of Red Wife",
 		// New Sun
 		"Church of the New Sun",
 		"Order of the Candle",  // "New Sun Contemplatives",
@@ -15,6 +16,7 @@ var (
 		"Seekers of the Unknown Fire",
 		"Spear of Cold-Eye",
 		"Harbingers of the Dark Star",
+		"Long Sun Witch-Hunters",
 		// Nobles
 		"Great House vet-Doranar",
 		"Great House vet-Elvan",
@@ -22,38 +24,41 @@ var (
 		"Low House vet-Aldar",
 		"Low House vet-Akash",
 		// Retinues & mercenaries
-		"Foremost Armigers",
+		"Barrett's Privateers",
 		"Black Dogs",
+		"Foremost Armigers",
 		"Order of the Sphinx",
 		"Order of the Basilisk",
 		"Order of the Griffin",
 		"Order of the Wyrm",
-		"Sulfur Company",
-		"Aldred's Two Hundred",
-		"Barrett's Privateers",
 		"Shield-Maidens of Veborg",
 		// Tribes
+		"Crystalmount Varlings",
 		"Scrivenwood Varlings",
-		"Crystal Lake Tribe",
-		"Silver Mountain Tribe",
-		"Grey Mountain Tribe",
 		// Guilds
 		"Explorers' Guild",
-		"Guild of Torturers",
+		"Torturers' Guild",
 		"Crimson Court",
-		"Canso Witch-Hunters",
 		"Foremost Metallurgists",
 		"Foremost Alchemists",
 		// Scholars & magic
 		"Silver Scroll Society",
 		"Unseeing Monks",
-		"Wardens of the Crystal Tower",
-		"Star Watchers",
 		// Other
 		"Cult of the Black Amphora",
-		"Spawn of Az-Marduk",
+	}
+
+	AffiliationsHuman = []string{
 		"White Cloaks",
-		"Wicker Men",
-		"Fog Walkers",
+	}
+
+	AffiliationsDwarf = []string{
+		"Wardens of the Crystal Tower",
+		"Crystal Lake Tribe",
+		"Silver Mountain Tribe",
+		"Grey Mountain Tribe",
+		"Molten Church",
+		"True Flame Company",
+		"Sulfur Company",
 	}
 )

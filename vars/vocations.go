@@ -21,6 +21,7 @@ var (
 		"Shaman",
 		// Rogues
 		"Assassin",
+		"Bounty Hunter",
 		"Hunter",
 		"Marksman",
 		"Monk",
@@ -34,6 +35,8 @@ var (
 		"Butcher",
 		"Cultist",
 		"Doctor",
+		"Farmer",
+		"Jailer",
 		"Merchant",
 		"Noble",
 		"Philosopher",

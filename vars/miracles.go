@@ -6,15 +6,15 @@ var (
 		"Witch King's Blessing",
 		"Witch King's False Life",
 		"Icy Hand of the Witch King",
-		"Invigorate the White Curse",
+		"White Curse",
 		"Banish to the Black Glass Labyrinth",
 		"Blood to Ice",
 		"Witchfrost Simulacrum",
-		"Rolling Calf's Burning Eyes",
+		"Inner Flame of Rolling Calf",
 		"Tongue of He Who Speaks Sideways",
-		"Resonance of Heart Bone",
-		"Curse of Two-Tongues",
-		"Baron's Walk Between Worlds",
+		"Heart Bone Resonance",
+		"Two-Tongues Curse",
+		"Baron's Walk-Between-Worlds",
 		"Un-Fire of Akarbalas",
 		"Rage of Red Wife",
 		// Sun Goddess, stars, & fire
@@ -31,8 +31,6 @@ var (
 		"Bite of the Serpent Star",
 		"Pluck from the Firmament",
 		"Shift Constellations",
-		"Starsong",
-		"Silver Moonlight",
 		// New Sun & light
 		"New Sun's Blessing",
 		"New Sun's Radiance",
@@ -52,7 +50,7 @@ var (
 		// Animals
 		"Call of the Elk",
 		"Skin of the Bear",
-		"Blackspider Venom",
+		"Venom of the Black Spider",
 		"Wisdom of the White Wyrm",
 		// Plants
 		"Acorn of Far Travel",
