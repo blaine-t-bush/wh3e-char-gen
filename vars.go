@@ -393,10 +393,17 @@ var (
 	}
 
 	affiliations_ = []string{
-		// Religion & magic
-		"Seekers of the Unknown Fire",
-		"Church of the New Sun",
+		// Witch King
 		"Witch Cult",
+		"Consorts of Red Wife",
+		"Servants of Akarbalas",
+		// New Sun
+		"Church of the New Sun",
+		"New Sun Contemplatives",
+		"New Sun Inquisitors",
+		"New Sun Proselytizers",
+		// Sun Goddess
+		"Seekers of the Unknown Fire",
 		"Spear of Cold-Eye",
 		// Magic
 		"Unseeing Monks",
@@ -412,9 +419,13 @@ var (
 		"Foremost Armigers",
 		"Black Dogs",
 		"Order of the Sphinx",
+		"Order of the Basilisk",
+		"Order of the Griffin",
+		"Order of the Wyrm",
 		"Sulfur Company",
 		"Aldred's Two Hundred",
 		"Barrett's Privateers",
+		"Shield of Arrav",
 		// Tribes
 		"Scrivenwood Varlings",
 		"Crystal Lake Tribe",
@@ -424,7 +435,9 @@ var (
 		"Explorers' Guild",
 		"Guild of Torturers",
 		"Crimson Court",
-		// Gangs
+		// Scholars
+		"Silver Scroll Society",
+		// Other
 		"White Cloaks",
 		"Wicker Men",
 		"Fog Walkers",
@@ -434,18 +447,28 @@ var (
 		// Items
 		"Witch King Reliquary",
 		"Sun Goddess Reliquary",
+		"Holy Book of the Old Sun",
+		"New Sun Reliquary",
+		"Holy Book of the New Sun",
 		"Grappling Hook",
 		"Dueling Cloak",
-		"Thirsty Emika, Spiked Mace",
-		"Crystal Knife",
+		"Foremost Armigers' Spiked Gauntlet",
+		"Thirsty Emika, Morningstar",
+		"Golem-Crystal Knife",
+		"Triple-Fullered Bronze Blade",
+		"Ruby Rapier",
 		"Executioner's Greatsword",
 		"Bow of Björnhilda",
+		"Barrett's Trusty Pistol",
+		"Grandpa's Sling",
 		"Ancient Valkyrie Buckler",
 		"Mind-Crystal Spyglass",
 		"Fuligin Cloak",
 		"Vial of Liquid Sunlight",
 		"Ancient Imperial Scroll",
 		"Bronze-King Tablet",
+		"Portable Alchemy Kit",
+		"Tome of the Unseeing Monks",
 		// People
 		"Sword-Saint Vehk",
 		"Old Powderfinger, Master Alchemist",
@@ -456,11 +479,12 @@ var (
 		"Three Matriarchs of the Old Sun",
 		"The Twin-Headed Basilisk",
 		// Animals
+		"Old Hoss the Mule",
 		"Rags the Horse",
 		"Bloodfang the Fighting Dog",
 		"Kaw the Crow",
-		"Mr. Bojangles the Circus Bear",
-		"Stinky Whitestripe the Skunk",
+		"Bojangles the Circus Bear",
+		"Stinky the Skunk",
 		// Locations
 		"Caverns of Zakhar",
 		"Silver Mountain",
@@ -939,5 +963,42 @@ var (
 		"Marie",
 		"Marion",
 		"Mirielda",
+	}
+
+	namesDwarfAdjective_ = []string{
+		"Burning",
+		"Smoldering",
+		"Steaming",
+		"Fiery",
+		"Flaming",
+		"Gleaming",
+		"Glittering",
+		"Glowing",
+		"Searing",
+		"Scorching",
+		"Blistering",
+		"Smoking",
+		"Kindled",
+		"Ashen",
+	}
+
+	namesDwarfNoun_ = []string{
+		"Mountain",
+		"Hill",
+		"Volcano",
+		"Cavern",
+		"Cave",
+		"Lake",
+		"Pool",
+		"Forge",
+		"Smithy",
+		"Sulfur",
+		"Silver",
+		"Gold",
+		"Copper",
+		"Crystal",
+		"Ruby",
+		"Garnet",
+		"Dragon",
 	}
 )

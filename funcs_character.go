@@ -4,24 +4,20 @@ import (
 	"math/rand"
 )
 
-func GenerateName() string {
-	prefixChance := 0.3
-	suffixChance := 0.3
-	rollPrefix := rand.Float64()
-	rollSuffix := rand.Float64()
+func GenerateName(species string) string {
 	name := ""
+	if species == "Dwarf" {
+		name += namesDwarfAdjective_[rand.Intn(len(namesDwarfAdjective_)-1)] + " " + namesDwarfNoun_[rand.Intn(len(namesDwarfNoun_)-1)]
+	} else {
+		prefixChance := 0.5
+		rollPrefix := rand.Float64()
 
-	// Possible name prefix
-	if rollPrefix <= prefixChance {
-		name += namesPrefix_[rand.Intn(len(namesPrefix_)-1)] + " "
-	}
-
-	// Primary name
-	name += namesPrimary_[rand.Intn(len(namesPrimary_)-1)]
-
-	// Possible name suffix
-	if rollSuffix <= suffixChance {
-		name += " " + namesSuffix_[rand.Intn(len(namesSuffix_)-1)]
+		// Randomly choose either prefix or suffix
+		if rollPrefix <= prefixChance {
+			name += namesPrefix_[rand.Intn(len(namesPrefix_)-1)] + " " + namesPrimary_[rand.Intn(len(namesPrimary_)-1)]
+		} else {
+			name += namesPrimary_[rand.Intn(len(namesPrimary_)-1)] + " " + namesSuffix_[rand.Intn(len(namesSuffix_)-1)]
+		}
 	}
 
 	return name

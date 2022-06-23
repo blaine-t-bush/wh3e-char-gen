@@ -121,7 +121,7 @@ func main() {
 		}
 	}
 
-	name := GenerateName()
+	name := GenerateName(species)
 	languages := GenerateLanguages(attributeScores["int"])
 
 	fmt.Printf("%s, level %d %s %s %s\n", name, level, class.name, species, vocation)
