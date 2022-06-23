@@ -33,16 +33,16 @@ type Attribute struct {
 	score        int
 }
 
-type Character struct {
-	name        string
-	class       Class
-	groups      []Group
-	attributes  map[string]int
-	attackValue int
-	savingThrow int
-	armorClass  int
-	moveSpeed   int
-}
+// type Character struct {
+// 	name        string
+// 	class       Class
+// 	groups      []Group
+// 	attributes  map[string]int
+// 	attackValue int
+// 	savingThrow int
+// 	armorClass  int
+// 	moveSpeed   int
+// }
 
 type Species struct {
 	name        string

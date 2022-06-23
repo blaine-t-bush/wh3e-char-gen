@@ -15,6 +15,10 @@ func D(n int, f int) int {
 	return total
 }
 
+func GetRandomElement(possibilities []string) string {
+	return possibilities[rand.Intn(len(possibilities)-1)]
+}
+
 func GetUniqueElement(possibilities []string, excludes []string) string {
 	var newElement string
 	var keepSeeking bool
