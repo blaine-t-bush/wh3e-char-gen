@@ -23,6 +23,7 @@ var (
 		"Great House vet-Haan",
 		"Low House vet-Aldar",
 		"Low House vet-Akash",
+		"Low House vet-Var",
 		// Retinues & mercenaries
 		"Barrett's Privateers",
 		"Black Dogs",
