@@ -30,19 +30,23 @@ type GroupCategory struct {
 type Attribute struct {
 	name         string
 	abbreviation string
-	score        int
+	Score        int
+	Groups       []string
 }
 
-// type Character struct {
-// 	name        string
-// 	class       Class
-// 	groups      []Group
-// 	attributes  map[string]int
-// 	attackValue int
-// 	savingThrow int
-// 	armorClass  int
-// 	moveSpeed   int
-// }
+type Character struct {
+	Name        string
+	Level       int
+	Class       string
+	Species     string
+	Vocation    string
+	HitPoints   int
+	SavingThrow int
+	AttackValue int
+	Attributes  map[string]Attribute
+	Languages   []string
+	Coins       int
+}
 
 type Species struct {
 	name        string

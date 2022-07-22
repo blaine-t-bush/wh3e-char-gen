@@ -3,13 +3,12 @@ package main
 import (
 	"fmt"
 	"math/rand"
-	"strconv"
 	"time"
 
 	vars "github.com/blaine-t-bush/wh3e-char-gen/vars"
 )
 
-func main() {
+func GenerateCharacter() Character {
 	// Seed the randomizer.
 	rand.Seed(time.Now().UnixNano())
 	// Randomly select a class.
@@ -20,12 +19,12 @@ func main() {
 	// Randomly generate attributes.
 	attributes := GenerateAttributeScores()
 	// Generate hit points.
-	hitPoints := GenerateHitPoints(levelInfo.hitDie, levelInfo.bonusHitPoints, level, class.name, attributes["con"].score, 0)
+	hitPoints := GenerateHitPoints(levelInfo.hitDie, levelInfo.bonusHitPoints, level, class.name, attributes["con"].Score, 0)
 
 	// Determine total group count.
 	bonusGroupCount := 0
 	for _, val := range attributes {
-		if val.score <= 5 {
+		if val.Score <= 5 {
 			bonusGroupCount++
 		}
 	}
@@ -124,54 +123,97 @@ func main() {
 	}
 
 	name := GenerateName(species)
-	languages := GenerateLanguages(attributes["int"].score)
+	languages := GenerateLanguages(attributes["int"].Score)
 	coins := GenerateCoins()
 
-	fmt.Printf("%s, level %d %s %s %s\n", name, level, class.name, species, vocation)
-	fmt.Println("# Statistics")
-	fmt.Printf(" - HP  %2s\n", strconv.Itoa(hitPoints))
-	fmt.Printf(" - AV  %2s\n", strconv.Itoa(levelInfo.attackValue))
-	fmt.Printf(" - ST  %2s\n", strconv.Itoa(levelInfo.savingThrow))
-	fmt.Println("# Attributes")
-	fmt.Printf(" - STR %2s %s\n", strconv.Itoa(attributes["str"].score), attributeGroupStrings["Strength"])
-	fmt.Printf(" - DEX %2s %s\n", strconv.Itoa(attributes["dex"].score), attributeGroupStrings["Dexterity"])
-	fmt.Printf(" - CON %2s %s\n", strconv.Itoa(attributes["con"].score), attributeGroupStrings["Constitution"])
-	fmt.Printf(" - INT %2s %s\n", strconv.Itoa(attributes["int"].score), attributeGroupStrings["Intelligence"])
-	fmt.Printf(" - WIS %2s %s\n", strconv.Itoa(attributes["wis"].score), attributeGroupStrings["Wisdom"])
-	fmt.Printf(" - CHA %2s %s\n", strconv.Itoa(attributes["cha"].score), attributeGroupStrings["Charisma"])
-	fmt.Println("# Languages")
-	for _, language := range languages {
-		fmt.Printf(" - %s\n", language)
+	formattedAttributes := map[string]Attribute{
+		"str": {
+			Score:  attributes["str"].Score,
+			Groups: make([]string, 2),
+		},
+		"dex": {
+			Score:  attributes["dex"].Score,
+			Groups: make([]string, 2),
+		},
+		"con": {
+			Score:  attributes["con"].Score,
+			Groups: make([]string, 2),
+		},
+		"int": {
+			Score:  attributes["int"].Score,
+			Groups: make([]string, 2),
+		},
+		"wis": {
+			Score:  attributes["wis"].Score,
+			Groups: make([]string, 2),
+		},
+		"cha": {
+			Score:  attributes["cha"].Score,
+			Groups: make([]string, 2),
+		},
 	}
-	if class.name == "Deft" {
-		fmt.Println("# Attunements")
-		attunements := GenerateAttunements()
-		for index, attunement := range attunements {
-			if index == 0 {
-				fmt.Printf(" - %s*\n", attunement)
-			} else {
-				fmt.Printf(" - %s\n", attunement)
-			}
-		}
-	} else if class.name == "Strong" {
-		fmt.Println("# Abilities")
-		abilities := GenerateAbilities()
-		for _, ability := range abilities {
-			fmt.Printf(" - %s\n", ability)
-		}
-	} else if class.name == "Wise" {
-		fmt.Println("# Miracles")
-		miracles := GenerateMiracles(attributes["wis"].score)
-		for index, miracle := range miracles {
-			if index == 0 {
-				fmt.Printf(" - %s*\n", miracle)
-			} else {
-				fmt.Printf(" - %s\n", miracle)
-			}
-		}
+
+	character := Character{
+		Name:        name,
+		Level:       level,
+		Class:       class.name,
+		Species:     species,
+		Vocation:    vocation,
+		HitPoints:   hitPoints,
+		AttackValue: levelInfo.attackValue,
+		SavingThrow: levelInfo.savingThrow,
+		Attributes:  formattedAttributes,
+		Languages:   languages,
+		Coins:       coins,
 	}
-	fmt.Println("# Inventory")
-	fmt.Printf(" - %3s coins\n", strconv.Itoa(coins))
+
+	return character
+
+	// fmt.Printf("%s, level %d %s %s %s\n", name, level, class.name, species, vocation)
+	// fmt.Println("# Statistics")
+	// fmt.Printf(" - HP  %2s\n", strconv.Itoa(hitPoints))
+	// fmt.Printf(" - AV  %2s\n", strconv.Itoa(levelInfo.attackValue))
+	// fmt.Printf(" - ST  %2s\n", strconv.Itoa(levelInfo.savingThrow))
+	// fmt.Println("# Attributes")
+	// fmt.Printf(" - STR %2s %s\n", strconv.Itoa(attributes["str"].score), attributeGroupStrings["Strength"])
+	// fmt.Printf(" - DEX %2s %s\n", strconv.Itoa(attributes["dex"].score), attributeGroupStrings["Dexterity"])
+	// fmt.Printf(" - CON %2s %s\n", strconv.Itoa(attributes["con"].score), attributeGroupStrings["Constitution"])
+	// fmt.Printf(" - INT %2s %s\n", strconv.Itoa(attributes["int"].score), attributeGroupStrings["Intelligence"])
+	// fmt.Printf(" - WIS %2s %s\n", strconv.Itoa(attributes["wis"].score), attributeGroupStrings["Wisdom"])
+	// fmt.Printf(" - CHA %2s %s\n", strconv.Itoa(attributes["cha"].score), attributeGroupStrings["Charisma"])
+	// fmt.Println("# Languages")
+	// for _, language := range languages {
+	// 	fmt.Printf(" - %s\n", language)
+	// }
+	// if class.name == "Deft" {
+	// 	fmt.Println("# Attunements")
+	// 	attunements := GenerateAttunements()
+	// 	for index, attunement := range attunements {
+	// 		if index == 0 {
+	// 			fmt.Printf(" - %s*\n", attunement)
+	// 		} else {
+	// 			fmt.Printf(" - %s\n", attunement)
+	// 		}
+	// 	}
+	// } else if class.name == "Strong" {
+	// 	fmt.Println("# Abilities")
+	// 	abilities := GenerateAbilities()
+	// 	for _, ability := range abilities {
+	// 		fmt.Printf(" - %s\n", ability)
+	// 	}
+	// } else if class.name == "Wise" {
+	// 	fmt.Println("# Miracles")
+	// 	miracles := GenerateMiracles(attributes["wis"].score)
+	// 	for index, miracle := range miracles {
+	// 		if index == 0 {
+	// 			fmt.Printf(" - %s*\n", miracle)
+	// 		} else {
+	// 			fmt.Printf(" - %s\n", miracle)
+	// 		}
+	// 	}
+	// }
+	// fmt.Println("# Inventory")
+	// fmt.Printf(" - %3s coins\n", strconv.Itoa(coins))
 }
 
 func GenerateName(species string) string {
@@ -230,27 +272,27 @@ func GenerateAttributeScores() map[string]Attribute {
 	attributes := Attributes
 
 	strength := attributes["str"]
-	strength.score = D(3, 6)
+	strength.Score = D(3, 6)
 	attributes["str"] = strength
 
 	dexterity := attributes["dex"]
-	dexterity.score = D(3, 6)
+	dexterity.Score = D(3, 6)
 	attributes["dex"] = dexterity
 
 	constitution := attributes["con"]
-	constitution.score = D(3, 6)
+	constitution.Score = D(3, 6)
 	attributes["con"] = constitution
 
 	intelligence := attributes["int"]
-	intelligence.score = D(3, 6)
+	intelligence.Score = D(3, 6)
 	attributes["int"] = intelligence
 
 	wisdom := attributes["wis"]
-	wisdom.score = D(3, 6)
+	wisdom.Score = D(3, 6)
 	attributes["wis"] = wisdom
 
 	charisma := attributes["cha"]
-	charisma.score = D(3, 6)
+	charisma.Score = D(3, 6)
 	attributes["cha"] = charisma
 
 	return attributes

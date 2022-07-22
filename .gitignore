@@ -1,1 +1,11 @@
+# IDE settings
 .vscode/
+
+# Environment variables
+.env
+.env.development
+.env.production
+
+# Build
+wh3e-char-gen
+wh3e-char-gen.exe
